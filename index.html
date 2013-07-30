@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Jquery.textwrapper.js by oelmekki</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Jquery.textwrapper.js</h1>
+          <h2>A jQuery plugin to automatically wrap text and write proper mails in textareas.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/oelmekki/jquery.textWrapper.js/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/oelmekki/jquery.textWrapper.js/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/oelmekki/jquery.textWrapper.js" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="jquerytextwrapperjs" class="anchor" href="#jquerytextwrapperjs"><span class="octicon octicon-link"></span></a>jquery.textWrapper.js</h1>
+
+<p>TextWrapper is a jQuery plugin that allows to automatically wrap a 
+textarea content to a specific column width. </p>
+
+<p>This allows to right properly wrapped email from a webinterface.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>You can initialize TextWrapper against your textarea like this :</p>
+
+<pre><code>$('textarea').textWrapper();
+</code></pre>
+
+<p>A few options are available :</p>
+
+<pre><code>colWidth:         72,
+autoWrap:         true,
+codeLineTest:     null
+</code></pre>
+
+<p><code>colWidth</code> sets the column width for your textarea. <code>autoWrap</code> sets the 
+initial state for automatic wrapping. <code>codeLineTest</code> allows you to set 
+a custom function to tell if a line is a code line and shouldn't be 
+automatically wrapped (default is to not wrap line if it begins with 
+four spaces).</p>
+
+<p>So, if you want 50 characters width column instead :</p>
+
+<pre><code>$('textarea').textWrapper({ colWidth: 50 });
+</code></pre>
+
+<h2>
+<a name="automatic-wrapping" class="anchor" href="#automatic-wrapping"><span class="octicon octicon-link"></span></a>Automatic wrapping</h2>
+
+<p>When automatic wrapping is on (the default), a line break will 
+automatically be inserted if you type a character at the end of the 
+line past the <code>colWidth</code> threshold. If this would break a word, the 
+whole word is displaced to next line.</p>
+
+<p>Note this will not happen if you're not at the end of line, to avoid 
+disturbance to the writer while she edits a line.</p>
+
+<p>Automatic wrapping can be toggled on and off using <code>C-m</code> (for : control
+mute).</p>
+
+<h2>
+<a name="manual-wrapping" class="anchor" href="#manual-wrapping"><span class="octicon octicon-link"></span></a>Manual wrapping</h2>
+
+<p>Manual wrapping can be triggered for the current paragraph using <code>C-l</code> 
+(for : control line). A paragraph is a group of lines separated from 
+other paragraphs with blank lines.</p>
+
+<p>The automatic wrapping state has not effect on manual wrapping.</p>
+
+<h2>
+<a name="quotes" class="anchor" href="#quotes"><span class="octicon octicon-link"></span></a>Quotes</h2>
+
+<p>If you quote your paragraph using "&gt; ", wrapping (either manual or
+automatic) will add the same character at the beginning of any new
+line.</p>
+
+<h2>
+<a name="events" class="anchor" href="#events"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<p>Three events are fired on the original textarea element :</p>
+
+<ul>
+<li>
+<code>wrap</code> : fired when text is automatically wrapped</li>
+<li>
+<code>manualWrap</code> : fired when user trigger manual wrap</li>
+<li>
+<code>toggleAutoWrap</code> : fired when user change autowrap state</li>
+</ul><p>Only the last one receive a specific parameter, which is the current 
+state of automatic wrapping.</p>
+
+<p>You are encouraged to build your interface so that user is aware if 
+he's currently in autowrap mode or not.</p>
+
+<h2>
+<a name="disabling-wrapping" class="anchor" href="#disabling-wrapping"><span class="octicon octicon-link"></span></a>Disabling wrapping</h2>
+
+<p>There are four ways to avoid wrapping :</p>
+
+<ul>
+<li>disabling it using <code>C-m</code>
+</li>
+<li>pasting content (use <code>C-l</code> if you want to wrap it)</li>
+<li>editing in the middle of a line</li>
+<li>prefixing line with four spaces (or anything that makes custom <code>codeLineTest</code> function to return true)</li>
+</ul><h1>
+<a name="browser-support" class="anchor" href="#browser-support"><span class="octicon octicon-link"></span></a>Browser support</h1>
+
+<p>Tested on :</p>
+
+<ul>
+<li>chrome-27.0.1453.110</li>
+<li>firefox-17.0.7</li>
+<li>ie-9 (known not to work on ie-8)</li>
+</ul>
+        </section>
+
+        <footer>
+          Jquery.textwrapper.js is maintained by <a href="https://github.com/oelmekki">oelmekki</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
